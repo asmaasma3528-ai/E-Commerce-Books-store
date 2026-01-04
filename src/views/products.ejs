@@ -33,7 +33,7 @@
     <table class="table table-striped table-hover border">
       <thead class="table-dark">
         <tr>
-          <th scope="col">#</th>
+          <th scope="col">id</th>
           <th scope="col">Book Title</th>
           <th scope="col">Author</th>
           <th scope="col">Price</th>
@@ -41,31 +41,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>The Great Gatsby</td>
-          <td>F. Scott Fitzgerald</td>
-          <td>$15.99</td>
-          <td> <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtBE_Lnmbz5PTvDKTHUq5WjGOBzm2WJ_37hQ&s" /></td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>1984</td>
-          <td>George Orwell</td>
-          <td>$12.50</td>
-          <td>
-            <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgFcuOFRO2z_jv7Q50o8bt7c6DxNQ3-e5OMA&s" />
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>To Kill a Mockingbird</td>
-          <td>Harper Lee</td>
-          <td>$18.00</td>
-          <td>
-            <img src = "https://cdn.britannica.com/21/182021-050-666DB6B1/book-cover-To-Kill-a-Mockingbird-many-1961.jpg" />
-          </td>
-        </tr>
+        <% products.forEach(product => { %>
+          <tr>
+          <th scope="row"> <%= product.id %> </th>
+          <td> <%= product.title %> </td>
+          <td> <%= product.author %> </td>
+          <td> <%= product.price %> </td>
+          <td> <img src = "<%= product.image %>" /></td>
+          </tr>
+        <% }) %>
       </tbody>
     </table>
   </div>
